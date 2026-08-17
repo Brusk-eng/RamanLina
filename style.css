@@ -774,10 +774,85 @@ img { max-width: 100%; height: auto; display: block; }
     max(1rem, env(safe-area-inset-right))
     1.25rem
     max(1rem, env(safe-area-inset-left));
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
   gap: 0.9rem;
   box-sizing: border-box;
+}
+
+.details-stack > * {
+  min-width: 0;
+}
+
+@media (min-width: 768px) {
+  .chapter-details {
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .details-stack {
+    flex: 1;
+    width: 100%;
+    max-width: 1080px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: minmax(220px, 1fr) minmax(220px, 1fr);
+    gap: 1rem;
+    padding: 1.35rem max(1.25rem, env(safe-area-inset-right)) 1.1rem max(1.25rem, env(safe-area-inset-left));
+    align-items: stretch;
+  }
+
+  .details-stack > * {
+    height: 100%;
+  }
+
+  .chapter-details .blessing-frame,
+  .countdown-strip,
+  .details-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+
+  .countdown-strip .countdown-orbit {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.65rem;
+  }
+
+  .countdown-strip .orbit-num {
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+  }
+
+  .countdown-strip .orbit-cell {
+    padding: 0.75rem 0.4rem;
+  }
+
+  .chapter-details .venue-map-wrap {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    gap: 0;
+    background: var(--ivory);
+    border: 1px solid rgba(90, 107, 72, 0.2);
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+  }
+
+  .chapter-details .venue-map-wrap iframe {
+    flex: 1;
+    height: auto;
+    min-height: 0;
+    border: 0;
+    border-radius: 0;
+  }
+
+  .chapter-details .venue-map-wrap .btn-primary {
+    width: 100%;
+    border-radius: 0;
+  }
 }
 
 .chapter-details .blessing-frame {
@@ -911,10 +986,19 @@ img { max-width: 100%; height: auto; display: block; }
   max-width: none;
   margin: 0;
   padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
 }
 
 .chapter-details .venue-map-wrap iframe {
   height: 150px;
+}
+
+.chapter-details .venue-map-wrap .btn-primary {
+  width: 100%;
+  text-align: center;
+  padding: 0.7rem 1rem;
 }
 
 .chapter-details .palace-footer {
@@ -928,9 +1012,8 @@ img { max-width: 100%; height: auto; display: block; }
 .chapter-details .footer-monogram {
   margin-top: 0.7rem;
 }
-.chapter-blessing {
-  background: linear-gradient(180deg, var(--cream) 0%, var(--cream-warm) 100%);
-}
+
+/* ── Blessing ── */
 
 .blessing-frame {
   padding: clamp(2rem, 6vw, 3.5rem);
