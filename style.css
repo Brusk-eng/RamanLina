@@ -23,7 +23,7 @@
   --font-serif: "Playfair Display", Georgia, serif;
   --font-body: "Cormorant Garamond", Georgia, serif;
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
-  --chapter-pad: clamp(4rem, 12vh, 7rem);
+  --chapter-pad: clamp(1.15rem, 3.5vh, 2rem);
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -604,8 +604,7 @@ img { max-width: 100%; height: auto; display: block; }
 
 .chapter {
   position: relative;
-  min-height: 100vh;
-  min-height: 100dvh;
+  min-height: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -629,6 +628,8 @@ img { max-width: 100%; height: auto; display: block; }
   align-items: center;
   text-align: center;
   overflow: hidden;
+  min-height: 100vh;
+  min-height: 100dvh;
 }
 
 .hero-bg {
@@ -699,6 +700,15 @@ img { max-width: 100%; height: auto; display: block; }
   color: var(--olive-mid);
 }
 
+.hero-time {
+  display: block;
+  margin-top: 0.85rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 4vw, 1.85rem);
+  letter-spacing: 0.18em;
+  color: var(--olive-deep);
+}
+
 .lang-ku .hero-date,
 .lang-ar .hero-date,
 .lang-ku .hero-tagline,
@@ -747,7 +757,177 @@ img { max-width: 100%; height: auto; display: block; }
   50% { transform: scaleY(1.15); opacity: 1; }
 }
 
-/* ── Blessing ── */
+/* ── Combined details page ── */
+.chapter-details {
+  justify-content: flex-start;
+  padding: 0;
+  background: var(--cream);
+  min-height: auto;
+}
+
+.details-stack {
+  width: 100%;
+  max-width: 560px;
+  margin: 0 auto;
+  padding:
+    1.15rem
+    max(1rem, env(safe-area-inset-right))
+    1.25rem
+    max(1rem, env(safe-area-inset-left));
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  box-sizing: border-box;
+}
+
+.chapter-details .blessing-frame {
+  padding: 1.1rem 1rem 1.15rem;
+  box-shadow: var(--shadow);
+}
+
+.chapter-details .bismillah {
+  font-size: clamp(1.1rem, 3.4vw, 1.45rem);
+  margin-bottom: 0.55rem;
+}
+
+.chapter-details .blessing-verse {
+  margin-bottom: 0.55rem;
+}
+
+.chapter-details .blessing-verse .display-sm {
+  font-size: clamp(1.2rem, 4vw, 1.55rem);
+  line-height: 1.2;
+}
+
+.chapter-details .blessing-sub {
+  margin-top: 0.35rem;
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+}
+
+.chapter-details .blessing-body {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.chapter-details .blessing-body p + p {
+  margin-top: 0.4rem;
+}
+
+.countdown-strip {
+  background: var(--olive-deep);
+  color: var(--cream);
+  padding: 0.9rem 0.85rem 1rem;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.countdown-strip .chapter-label {
+  color: var(--olive-pale);
+  margin-bottom: 0.7rem;
+  font-size: 0.62rem;
+}
+
+.countdown-strip .countdown-orbit {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.4rem;
+  max-width: none;
+  margin: 0;
+}
+
+.countdown-strip .orbit-cell {
+  padding: 0.5rem 0.15rem;
+}
+
+.countdown-strip .orbit-num {
+  font-size: clamp(1.2rem, 4.5vw, 1.55rem);
+}
+
+.countdown-strip .orbit-label {
+  font-size: 0.48rem;
+  letter-spacing: 0.12em;
+  margin-top: 0.3rem;
+}
+
+.countdown-strip .countdown-today {
+  margin-top: 0.7rem;
+  font-size: 1rem;
+}
+
+.details-card {
+  background: var(--ivory);
+  border: 1px solid rgba(90, 107, 72, 0.2);
+  box-shadow: var(--shadow);
+  border-radius: 4px;
+  padding: 1.15rem 1rem 1.25rem;
+  text-align: center;
+}
+
+.details-card .ticket-eyebrow {
+  margin-bottom: 0.45rem;
+}
+
+.details-card .ticket-time {
+  font-size: clamp(1.8rem, 7vw, 2.4rem);
+  margin-bottom: 0.3rem;
+}
+
+.details-card .ticket-event {
+  margin-bottom: 0.55rem;
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+}
+
+.details-card .venue-name {
+  font-size: clamp(1.2rem, 4vw, 1.5rem);
+}
+
+.details-card .venue-place {
+  margin-bottom: 0.35rem;
+}
+
+.details-card .ticket-venue {
+  display: none;
+}
+
+.details-card .ticket-date {
+  margin-bottom: 0.55rem;
+}
+
+.details-card .venue-address {
+  font-size: 0.88rem;
+  line-height: 1.45;
+  margin-bottom: 0.9rem;
+}
+
+.details-card .btn-primary {
+  width: 100%;
+  text-align: center;
+  padding: 0.7rem 1rem;
+}
+
+.chapter-details .venue-map-wrap {
+  max-width: none;
+  margin: 0;
+  padding: 0;
+}
+
+.chapter-details .venue-map-wrap iframe {
+  height: 150px;
+}
+
+.chapter-details .palace-footer {
+  padding: 1.15rem 1rem max(1.75rem, calc(env(safe-area-inset-bottom) + 1rem));
+}
+
+.chapter-details .gift-sign {
+  font-size: 1.05rem;
+}
+
+.chapter-details .footer-monogram {
+  margin-top: 0.7rem;
+}
 .chapter-blessing {
   background: linear-gradient(180deg, var(--cream) 0%, var(--cream-warm) 100%);
 }
@@ -1346,7 +1526,7 @@ img { max-width: 100%; height: auto; display: block; }
     bottom: 2.5rem;
   }
 
-  .venue-hero { min-height: 80vh; min-height: 80dvh; }
+  .venue-hero { min-height: 36vh; min-height: 36dvh; }
 
   .venue-hero {
     align-items: flex-end;
@@ -1386,7 +1566,7 @@ img { max-width: 100%; height: auto; display: block; }
 
 @media (max-width: 767px) {
   :root {
-    --chapter-pad: clamp(2.25rem, 7vh, 3.5rem);
+    --chapter-pad: 1.15rem;
   }
 
   .chapter-rail { display: none !important; }

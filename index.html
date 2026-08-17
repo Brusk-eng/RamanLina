@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Italiana&family=Noto+Kufi+Arabic:wght@400;500;600;700&family=Noto+Naskh+Arabic:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=12">
+  <link rel="stylesheet" href="style.css?v=13">
 </head>
 <body>
 
@@ -69,10 +69,7 @@
   <!-- Chapter navigation rail -->
   <nav class="chapter-rail" id="chapter-rail" aria-label="Sections" hidden>
     <a href="#hero" class="chapter-dot is-active" data-chapter="hero" aria-label="Home"><span class="chapter-dot-tip" data-i18n="nav.home">Home</span></a>
-    <a href="#blessing" class="chapter-dot" data-chapter="blessing" aria-label="Blessing"><span class="chapter-dot-tip" data-i18n="nav.blessing">Blessing</span></a>
-    <a href="#countdown-section" class="chapter-dot" data-chapter="countdown" aria-label="Countdown"><span class="chapter-dot-tip" data-i18n="nav.countdown">Countdown</span></a>
-    <a href="#event" class="chapter-dot" data-chapter="event" aria-label="Event"><span class="chapter-dot-tip" data-i18n="nav.event">Event</span></a>
-    <a href="#venue" class="chapter-dot" data-chapter="venue" aria-label="Venue"><span class="chapter-dot-tip" data-i18n="nav.venue">Venue</span></a>
+    <a href="#details" class="chapter-dot" data-chapter="details" aria-label="Event"><span class="chapter-dot-tip" data-i18n="nav.event">Event</span></a>
   </nav>
 
   <div class="floating-controls" id="floating-controls">
@@ -108,18 +105,18 @@
         </div>
         <p class="hero-date" id="hero-date">Sunday, 06 September 2026</p>
         <p class="hero-tagline" data-i18n="hero.tagline">Together, start forever</p>
+        <time class="hero-time" datetime="19:00">7:00 PM</time>
       </div>
-      <a href="#blessing" class="scroll-cue" aria-label="Scroll">
+      <a href="#details" class="scroll-cue" aria-label="Scroll">
         <span class="scroll-cue-line"></span>
         <span class="scroll-cue-text" data-i18n="hero.scroll">Discover</span>
       </a>
     </section>
 
-    <!-- Blessing -->
-    <section class="chapter chapter-blessing" id="blessing" data-chapter="blessing">
-      <div class="chapter-inner reveal">
-        <div class="blessing-frame">
-          <img src="assets/swan-heart.png" class="swan-orn swan-orn-blessing" alt="" aria-hidden="true">
+    <!-- Details: blessing, countdown, venue, map -->
+    <section class="chapter chapter-details" id="details" data-chapter="details">
+      <div class="details-stack">
+        <div class="blessing-frame reveal">
           <p class="bismillah" dir="rtl" lang="ar">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ</p>
           <div class="blessing-verse">
             <p class="display display-sm" data-i18n="blessing.soul1">Two Souls</p>
@@ -129,90 +126,59 @@
           <div class="blessing-body">
             <p data-i18n="blessing.dear">Dear Family &amp; Friends,</p>
             <p data-i18n="blessing.msg1">With gratitude to Allah, we warmly invite you to celebrate the beginning of our forever.</p>
-            <p data-i18n="blessing.msg2">Your love, prayers, and presence will make this day truly unforgettable.</p>
           </div>
         </div>
-      </div>
-    </section>
 
-    <!-- Countdown -->
-    <section class="chapter chapter-countdown" id="countdown-section" data-chapter="countdown">
-      <div class="chapter-inner reveal">
-        <h2 class="chapter-label" data-i18n="countdown.title">The Celebration Begins In</h2>
-        <img src="assets/swan-heart.png" class="swan-orn swan-orn-countdown" alt="" aria-hidden="true">
-        <div class="countdown-orbit" id="countdown" role="timer" aria-live="polite">
-          <div class="orbit-ring" aria-hidden="true"></div>
-          <div class="orbit-cell">
-            <span class="orbit-num" id="count-days">00</span>
-            <span class="orbit-label" data-i18n="countdown.days">Days</span>
+        <div class="countdown-strip reveal" id="countdown-section">
+          <h2 class="chapter-label" data-i18n="countdown.title">The Celebration Begins In</h2>
+          <div class="countdown-orbit" id="countdown" role="timer" aria-live="polite">
+            <div class="orbit-cell">
+              <span class="orbit-num" id="count-days">00</span>
+              <span class="orbit-label" data-i18n="countdown.days">Days</span>
+            </div>
+            <div class="orbit-cell">
+              <span class="orbit-num" id="count-hours">00</span>
+              <span class="orbit-label" data-i18n="countdown.hours">Hours</span>
+            </div>
+            <div class="orbit-cell">
+              <span class="orbit-num" id="count-minutes">00</span>
+              <span class="orbit-label" data-i18n="countdown.minutes">Minutes</span>
+            </div>
+            <div class="orbit-cell">
+              <span class="orbit-num" id="count-seconds">00</span>
+              <span class="orbit-label" data-i18n="countdown.seconds">Seconds</span>
+            </div>
           </div>
-          <div class="orbit-cell">
-            <span class="orbit-num" id="count-hours">00</span>
-            <span class="orbit-label" data-i18n="countdown.hours">Hours</span>
-          </div>
-          <div class="orbit-cell">
-            <span class="orbit-num" id="count-minutes">00</span>
-            <span class="orbit-label" data-i18n="countdown.minutes">Minutes</span>
-          </div>
-          <div class="orbit-cell">
-            <span class="orbit-num" id="count-seconds">00</span>
-            <span class="orbit-label" data-i18n="countdown.seconds">Seconds</span>
-          </div>
+          <p class="countdown-today hidden" id="countdown-today" data-i18n="countdown.today">Today is the day.</p>
         </div>
-        <p class="countdown-today hidden" id="countdown-today" data-i18n="countdown.today">Today is the day.</p>
-      </div>
-    </section>
 
-    <!-- Event ticket -->
-    <section class="chapter chapter-event" id="event" data-chapter="event">
-      <div class="chapter-inner reveal">
-        <h2 class="chapter-label" data-i18n="ticket.title">Your Invitation</h2>
-        <article class="event-ticket">
-          <div class="ticket-stub" aria-hidden="true">
-            <span class="ticket-stub-text">RL</span>
-            <span class="ticket-stub-line"></span>
-            <span class="ticket-stub-text">2026</span>
-          </div>
-          <div class="ticket-main">
-            <img src="assets/swan-heart.png" class="swan-orn swan-orn-ticket-watermark" alt="" aria-hidden="true">
-            <p class="ticket-eyebrow" data-i18n="schedule.title">Schedule</p>
-            <time class="ticket-time" datetime="19:00">7:00 PM</time>
-            <h3 class="ticket-event" data-i18n="schedule.s1">Guest Arrival</h3>
-            <p class="ticket-venue" id="ticket-venue">White Hall Erbil · Big Ballroom</p>
-            <p class="ticket-date" id="ticket-date">Sunday, 06 September 2026</p>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- Venue -->
-    <section class="chapter chapter-venue" id="venue" data-chapter="venue">
-      <div class="venue-hero reveal">
-        <figure class="venue-panorama" aria-hidden="true"></figure>
-        <div class="venue-overlay-card reveal-child">
-          <img src="assets/swan-heart.png" class="swan-orn swan-orn-venue" alt="" aria-hidden="true">
-          <h2 class="chapter-label" data-i18n="venue.title">Venue</h2>
+        <article class="details-card reveal" id="venue">
+          <p class="ticket-eyebrow" data-i18n="ticket.title">Your Invitation</p>
+          <time class="ticket-time" datetime="19:00">7:00 PM</time>
+          <h3 class="ticket-event" data-i18n="schedule.s1">Guest Arrival</h3>
           <h3 class="venue-name" id="venue-name">White Hall Erbil</h3>
           <p class="venue-place" id="venue-place">Big Ballroom</p>
+          <p class="ticket-venue" id="ticket-venue">White Hall Erbil · Big Ballroom</p>
+          <p class="ticket-date" id="ticket-date">Sunday, 06 September 2026</p>
           <address class="venue-address" id="venue-address">
             White Hall Erbil<br>Next to Social Academic Center<br>Erbil<br>Erbil Governorate 44001<br>Iraq
           </address>
           <a href="#" class="btn btn-primary" id="map-btn" target="_blank" rel="noopener noreferrer" data-i18n="venue.maps">Open in Google Maps</a>
+        </article>
+
+        <div class="venue-map-wrap reveal">
+          <iframe id="map-iframe" title="Venue location map" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
         </div>
       </div>
-      <div class="venue-map-wrap reveal">
-        <iframe id="map-iframe" title="Venue location map" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
-      </div>
-    </section>
 
-    <footer class="palace-footer">
-      <img src="assets/swan-heart.png" class="swan-orn swan-orn-footer" alt="" aria-hidden="true">
-      <p class="gift-sign display display-sm" data-i18n="footer.love">With Love</p>
-      <p class="gift-names" id="footer-names">Raman &amp; Lina</p>
-      <p class="footer-date" id="footer-date">Sunday, 06 September 2026</p>
-      <p class="footer-venue" id="footer-venue">White Hall Erbil Big Ballroom</p>
-      <p class="footer-monogram" aria-hidden="true">R · L</p>
-    </footer>
+      <footer class="palace-footer">
+        <p class="gift-sign display display-sm" data-i18n="footer.love">With Love</p>
+        <p class="gift-names" id="footer-names">Raman &amp; Lina</p>
+        <p class="footer-date" id="footer-date">Sunday, 06 September 2026</p>
+        <p class="footer-venue" id="footer-venue">White Hall Erbil Big Ballroom</p>
+        <p class="footer-monogram" aria-hidden="true">R · L</p>
+      </footer>
+    </section>
 
   </main>
 
