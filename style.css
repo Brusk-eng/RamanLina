@@ -797,7 +797,7 @@ img { max-width: 100%; height: auto; display: block; }
     width: 100%;
     max-width: 1080px;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: minmax(220px, 1fr) minmax(220px, 1fr);
+    grid-template-rows: auto minmax(220px, 1fr);
     gap: 1rem;
     padding: 1.35rem max(1.25rem, env(safe-area-inset-right)) 1.1rem max(1.25rem, env(safe-area-inset-left));
     align-items: stretch;
@@ -825,8 +825,17 @@ img { max-width: 100%; height: auto; display: block; }
     font-size: clamp(1.6rem, 3vw, 2.2rem);
   }
 
-  .countdown-strip .orbit-cell {
-    padding: 0.75rem 0.4rem;
+  .details-card {
+    justify-content: flex-start;
+    overflow: auto;
+  }
+
+  .details-card .ticket-time {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+  }
+
+  .details-card .venue-address {
+    margin-bottom: 0;
   }
 
   .chapter-details .venue-map-wrap {
