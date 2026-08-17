@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="Wedding invitation for Raman & Lina — Sunday, 06 September 2026 at White Hall Erbil">
+  <title>Raman & Lina — Wedding Invitation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Italiana&family=Noto+Kufi+Arabic:wght@400;500;600;700&family=Noto+Naskh+Arabic:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=12">
+</head>
+<body>
+
+  <div class="magic-layer" id="magic-layer" aria-hidden="true"></div>
+  <div class="magic-sweep" id="magic-sweep" aria-hidden="true"></div>
+  <div class="ambient-layer" id="ambient-layer" aria-hidden="true"></div>
+
+  <!-- ═══ ACT I · Language Portal ═══ -->
+  <div id="lang-splash" class="portal" role="dialog" aria-modal="true" aria-label="Choose your language">
+    <div class="portal-arch" aria-hidden="true">
+      <div class="portal-curtain portal-curtain-left"></div>
+      <div class="portal-curtain portal-curtain-right"></div>
+      <div class="portal-glow"></div>
+    </div>
+    <div class="portal-inner">
+      <div class="portal-brand">
+        <img src="assets/swan-heart.png" class="swan-orn swan-orn-portal" alt="" aria-hidden="true">
+        <div class="portal-monogram" aria-hidden="true">R · L</div>
+      </div>
+      <p class="portal-couple" id="portal-couple">Raman &amp; Lina</p>
+      <p class="portal-tagline" data-i18n="portal.tagline">A celebration of love</p>
+      <p class="portal-prompt" data-i18n="portal.choose">Choose your language</p>
+      <div class="portal-langs">
+        <button type="button" class="portal-lang" data-lang="en">
+          <span class="portal-lang-label">English</span>
+          <span class="portal-lang-sub">Continue in English</span>
+        </button>
+        <button type="button" class="portal-lang" data-lang="ku" lang="ckb" dir="rtl">
+          <span class="portal-lang-label">کوردی</span>
+          <span class="portal-lang-sub">بەردەوامبوون بە کوردی</span>
+        </button>
+        <button type="button" class="portal-lang" data-lang="ar" lang="ar" dir="rtl">
+          <span class="portal-lang-label">العربية</span>
+          <span class="portal-lang-sub">المتابعة بالعربية</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ ACT II · The Olive Gates ═══ -->
+  <div id="gate-overlay" class="gate gate-hidden" aria-hidden="true">
+    <div class="gate-curtain gate-curtain-left" aria-hidden="true"></div>
+    <div class="gate-curtain gate-curtain-right" aria-hidden="true"></div>
+    <div class="gate-dust" id="gate-dust" aria-hidden="true"></div>
+    <div class="gate-scene">
+      <button type="button" class="gate-medallion" id="gate-seal" data-i18n-aria="gate.openAria">
+        <span class="gate-medallion-ring" aria-hidden="true"></span>
+        <span class="gate-medallion-inner">
+          <img src="assets/swan-heart.png" class="swan-orn swan-orn-gate" alt="" aria-hidden="true">
+          <span class="gate-initials">R &amp; L</span>
+          <span class="gate-invited" data-i18n="gate.invited">You Are Invited</span>
+        </span>
+      </button>
+      <p class="gate-hint" id="gate-hint" data-i18n="gate.hint">Tap to enter the celebration</p>
+    </div>
+  </div>
+
+  <!-- Chapter navigation rail -->
+  <nav class="chapter-rail" id="chapter-rail" aria-label="Sections" hidden>
+    <a href="#hero" class="chapter-dot is-active" data-chapter="hero" aria-label="Home"><span class="chapter-dot-tip" data-i18n="nav.home">Home</span></a>
+    <a href="#blessing" class="chapter-dot" data-chapter="blessing" aria-label="Blessing"><span class="chapter-dot-tip" data-i18n="nav.blessing">Blessing</span></a>
+    <a href="#countdown-section" class="chapter-dot" data-chapter="countdown" aria-label="Countdown"><span class="chapter-dot-tip" data-i18n="nav.countdown">Countdown</span></a>
+    <a href="#event" class="chapter-dot" data-chapter="event" aria-label="Event"><span class="chapter-dot-tip" data-i18n="nav.event">Event</span></a>
+    <a href="#venue" class="chapter-dot" data-chapter="venue" aria-label="Venue"><span class="chapter-dot-tip" data-i18n="nav.venue">Venue</span></a>
+  </nav>
+
+  <div class="floating-controls" id="floating-controls">
+    <button type="button" class="fab fab-lang" id="lang-toggle" data-i18n-aria="controls.langAria">
+      <span id="lang-toggle-flag">کوردی</span>
+    </button>
+    <button type="button" class="fab fab-music" id="music-btn" aria-pressed="false" data-i18n-aria="controls.musicPlayAria">
+      <svg class="music-icon music-icon-play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+      <svg class="music-icon music-icon-pause" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+    </button>
+  </div>
+
+  <audio id="wedding-music" loop preload="none">
+    <source src="assets/music.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- ═══ ACT III · The Celebration ═══ -->
+  <main id="main-content" class="palace hidden">
+
+    <!-- Hero -->
+    <section class="chapter chapter-hero" id="hero" data-chapter="hero">
+      <div class="hero-bg" id="hero-bg" aria-hidden="true">
+        <div class="hero-curtain hero-curtain-left"></div>
+        <div class="hero-curtain hero-curtain-right"></div>
+        <div class="hero-light"></div>
+        <div class="hero-petals" id="hero-petals" aria-hidden="true"></div>
+      </div>
+      <div class="chapter-inner hero-inner reveal">
+        <p class="hero-eyebrow" data-i18n="hero.weddingDay">Wedding Day</p>
+        <h1 class="hero-names display" id="hero-couple">Raman &amp; Lina</h1>
+        <div class="hero-divider" aria-hidden="true">
+          <img src="assets/swan-heart.png" class="swan-orn swan-orn-hero" alt="" aria-hidden="true">
+        </div>
+        <p class="hero-date" id="hero-date">Sunday, 06 September 2026</p>
+        <p class="hero-tagline" data-i18n="hero.tagline">Together, start forever</p>
+      </div>
+      <a href="#blessing" class="scroll-cue" aria-label="Scroll">
+        <span class="scroll-cue-line"></span>
+        <span class="scroll-cue-text" data-i18n="hero.scroll">Discover</span>
+      </a>
+    </section>
+
+    <!-- Blessing -->
+    <section class="chapter chapter-blessing" id="blessing" data-chapter="blessing">
+      <div class="chapter-inner reveal">
+        <div class="blessing-frame">
+          <img src="assets/swan-heart.png" class="swan-orn swan-orn-blessing" alt="" aria-hidden="true">
+          <p class="bismillah" dir="rtl" lang="ar">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ</p>
+          <div class="blessing-verse">
+            <p class="display display-sm" data-i18n="blessing.soul1">Two Souls</p>
+            <p class="display display-sm" data-i18n="blessing.soul2">One Destiny</p>
+            <p class="blessing-sub" data-i18n="blessing.sub">A Lifetime Written by Allah</p>
+          </div>
+          <div class="blessing-body">
+            <p data-i18n="blessing.dear">Dear Family &amp; Friends,</p>
+            <p data-i18n="blessing.msg1">With gratitude to Allah, we warmly invite you to celebrate the beginning of our forever.</p>
+            <p data-i18n="blessing.msg2">Your love, prayers, and presence will make this day truly unforgettable.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Countdown -->
+    <section class="chapter chapter-countdown" id="countdown-section" data-chapter="countdown">
+      <div class="chapter-inner reveal">
+        <h2 class="chapter-label" data-i18n="countdown.title">The Celebration Begins In</h2>
+        <img src="assets/swan-heart.png" class="swan-orn swan-orn-countdown" alt="" aria-hidden="true">
+        <div class="countdown-orbit" id="countdown" role="timer" aria-live="polite">
+          <div class="orbit-ring" aria-hidden="true"></div>
+          <div class="orbit-cell">
+            <span class="orbit-num" id="count-days">00</span>
+            <span class="orbit-label" data-i18n="countdown.days">Days</span>
+          </div>
+          <div class="orbit-cell">
+            <span class="orbit-num" id="count-hours">00</span>
+            <span class="orbit-label" data-i18n="countdown.hours">Hours</span>
+          </div>
+          <div class="orbit-cell">
+            <span class="orbit-num" id="count-minutes">00</span>
+            <span class="orbit-label" data-i18n="countdown.minutes">Minutes</span>
+          </div>
+          <div class="orbit-cell">
+            <span class="orbit-num" id="count-seconds">00</span>
+            <span class="orbit-label" data-i18n="countdown.seconds">Seconds</span>
+          </div>
+        </div>
+        <p class="countdown-today hidden" id="countdown-today" data-i18n="countdown.today">Today is the day.</p>
+      </div>
+    </section>
+
+    <!-- Event ticket -->
+    <section class="chapter chapter-event" id="event" data-chapter="event">
+      <div class="chapter-inner reveal">
+        <h2 class="chapter-label" data-i18n="ticket.title">Your Invitation</h2>
+        <article class="event-ticket">
+          <div class="ticket-stub" aria-hidden="true">
+            <span class="ticket-stub-text">RL</span>
+            <span class="ticket-stub-line"></span>
+            <span class="ticket-stub-text">2026</span>
+          </div>
+          <div class="ticket-main">
+            <img src="assets/swan-heart.png" class="swan-orn swan-orn-ticket-watermark" alt="" aria-hidden="true">
+            <p class="ticket-eyebrow" data-i18n="schedule.title">Schedule</p>
+            <time class="ticket-time" datetime="19:00">7:00 PM</time>
+            <h3 class="ticket-event" data-i18n="schedule.s1">Guest Arrival</h3>
+            <p class="ticket-venue" id="ticket-venue">White Hall Erbil · Big Ballroom</p>
+            <p class="ticket-date" id="ticket-date">Sunday, 06 September 2026</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Venue -->
+    <section class="chapter chapter-venue" id="venue" data-chapter="venue">
+      <div class="venue-hero reveal">
+        <figure class="venue-panorama" aria-hidden="true"></figure>
+        <div class="venue-overlay-card reveal-child">
+          <img src="assets/swan-heart.png" class="swan-orn swan-orn-venue" alt="" aria-hidden="true">
+          <h2 class="chapter-label" data-i18n="venue.title">Venue</h2>
+          <h3 class="venue-name" id="venue-name">White Hall Erbil</h3>
+          <p class="venue-place" id="venue-place">Big Ballroom</p>
+          <address class="venue-address" id="venue-address">
+            White Hall Erbil<br>Next to Social Academic Center<br>Erbil<br>Erbil Governorate 44001<br>Iraq
+          </address>
+          <a href="#" class="btn btn-primary" id="map-btn" target="_blank" rel="noopener noreferrer" data-i18n="venue.maps">Open in Google Maps</a>
+        </div>
+      </div>
+      <div class="venue-map-wrap reveal">
+        <iframe id="map-iframe" title="Venue location map" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+      </div>
+    </section>
+
+    <footer class="palace-footer">
+      <img src="assets/swan-heart.png" class="swan-orn swan-orn-footer" alt="" aria-hidden="true">
+      <p class="gift-sign display display-sm" data-i18n="footer.love">With Love</p>
+      <p class="gift-names" id="footer-names">Raman &amp; Lina</p>
+      <p class="footer-date" id="footer-date">Sunday, 06 September 2026</p>
+      <p class="footer-venue" id="footer-venue">White Hall Erbil Big Ballroom</p>
+      <p class="footer-monogram" aria-hidden="true">R · L</p>
+    </footer>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
