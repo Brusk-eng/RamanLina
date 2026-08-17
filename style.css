@@ -899,15 +899,17 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 .countdown-strip {
-  background: var(--olive-deep);
-  color: var(--cream);
+  background: var(--ivory);
+  color: var(--olive-deep);
   padding: 0.9rem 0.85rem 1rem;
   border-radius: 4px;
   text-align: center;
+  border: 1px solid rgba(90, 107, 72, 0.2);
+  box-shadow: var(--shadow);
 }
 
 .countdown-strip .chapter-label {
-  color: var(--olive-pale);
+  color: var(--olive-mid);
   margin-bottom: 0.7rem;
   font-size: 0.62rem;
 }
@@ -922,21 +924,26 @@ img { max-width: 100%; height: auto; display: block; }
 
 .countdown-strip .orbit-cell {
   padding: 0.5rem 0.15rem;
+  background: rgba(90, 107, 72, 0.06);
+  border: 1px solid rgba(90, 107, 72, 0.18);
 }
 
 .countdown-strip .orbit-num {
   font-size: clamp(1.2rem, 4.5vw, 1.55rem);
+  color: var(--olive-deep);
 }
 
 .countdown-strip .orbit-label {
   font-size: 0.48rem;
   letter-spacing: 0.12em;
   margin-top: 0.3rem;
+  color: var(--olive-mid);
 }
 
 .countdown-strip .countdown-today {
   margin-top: 0.7rem;
   font-size: 1rem;
+  color: var(--olive-mid);
 }
 
 .details-card {
