@@ -1025,6 +1025,24 @@ img { max-width: 100%; height: auto; display: block; }
   font-size: 1.05rem;
 }
 
+.footer-wish {
+  margin: 1.15rem auto 0.35rem;
+  max-width: 36rem;
+  padding: 0.65rem 1rem;
+  font-family: var(--font-serif);
+  font-size: clamp(1.2rem, 3.4vw, 1.55rem);
+  font-style: italic;
+  line-height: 1.45;
+  color: var(--cream);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+}
+
+.lang-ku .footer-wish,
+.lang-ar .footer-wish {
+  font-family: "Noto Naskh Arabic", var(--font-body);
+  font-style: normal;
+}
+
 .chapter-details .footer-monogram {
   margin-top: 0.7rem;
 }
@@ -1594,7 +1612,7 @@ img { max-width: 100%; height: auto; display: block; }
   .orbit-label, .ticket-eyebrow, .ticket-event, .ticket-venue, .ticket-date,
   .venue-place, .venue-address, .story-card h3, .story-card p,
   .gift-text, .gate-invited, .gate-hint, .portal-tagline, .portal-prompt,
-  .scroll-cue-text, .footer-date, .footer-venue, .display-sm, .bismillah
+  .scroll-cue-text, .footer-date, .footer-venue, .footer-wish, .display-sm, .bismillah
 ),
 .lang-ar :where(
   .hero-eyebrow, .hero-date, .hero-tagline, .hero-names,
@@ -1602,7 +1620,7 @@ img { max-width: 100%; height: auto; display: block; }
   .orbit-label, .ticket-eyebrow, .ticket-event, .ticket-venue, .ticket-date,
   .venue-place, .venue-address, .story-card h3, .story-card p,
   .gift-text, .gate-invited, .gate-hint, .portal-tagline, .portal-prompt,
-  .scroll-cue-text, .footer-date, .footer-venue, .display-sm, .bismillah
+  .scroll-cue-text, .footer-date, .footer-venue, .footer-wish, .display-sm, .bismillah
 ) {
   letter-spacing: 0;
   text-transform: none;

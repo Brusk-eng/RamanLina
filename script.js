@@ -140,6 +140,7 @@ const TRANSLATIONS = {
     "gift.title": "A Small Note",
     "gift.text": "Your love, prayers, and presence are the greatest gifts we could ever receive.",
     "footer.love": "With Love",
+    "footer.wish": "Sweet dreams for your children",
     // WhatsApp message labels
     "wa.header": "Wedding RSVP",
     "wa.name": "Name",
@@ -227,6 +228,7 @@ const TRANSLATIONS = {
     "gift.title": "تێبینییەکی بچووک",
     "gift.text": "خۆشەویستی، نزا و ئامادەبوونتان گەورەترین دیارین کە دەتوانین وەریبگرین.",
     "footer.love": "بە خۆشەویستییەوە",
+    "footer.wish": "خەوێکی خۆش بۆ مناڵەکانتان",
     "wa.header": "بەشداری زەماوەند",
     "wa.name": "ناو",
     "wa.phone": "مۆبایل",
@@ -313,6 +315,7 @@ const TRANSLATIONS = {
     "gift.title": "كلمة صغيرة",
     "gift.text": "حبكم ودعواتكم وحضوركم أغلى هدية نتمنىها.",
     "footer.love": "مع المحبة",
+    "footer.wish": "أحلام سعيدة لأطفالكم",
     "wa.header": "تأكيد حضور العرس",
     "wa.name": "الاسم",
     "wa.phone": "الهاتف",
@@ -694,6 +697,7 @@ function initGate() {
 
       initRevealAnimations(true);
       requestAnimationFrame(() => resetPageScroll());
+      scheduleHeroAutoScroll();
 
       setTimeout(() => {
         overlay.style.display = "none";
@@ -738,6 +742,40 @@ function initGate() {
     const deltaY = touchStartY - e.touches[0].clientY;
     if (Math.abs(deltaY) > 30) onScrollAttempt();
   }, { passive: true });
+}
+
+function scheduleHeroAutoScroll() {
+  const details = document.getElementById("details");
+  if (!details) return;
+
+  let cancelled = false;
+  const cancelIfScrolled = () => {
+    if (window.scrollY > 48) cancelled = true;
+  };
+
+  window.addEventListener("wheel", cancelIfScrolled, { passive: true });
+  window.addEventListener("touchmove", cancelIfScrolled, { passive: true });
+  window.addEventListener("scroll", cancelIfScrolled, { passive: true });
+
+  const cue = document.querySelector(".scroll-cue");
+  if (cue) {
+    cue.addEventListener("click", () => {
+      cancelled = true;
+    }, { once: true });
+  }
+
+  setTimeout(() => {
+    window.removeEventListener("wheel", cancelIfScrolled);
+    window.removeEventListener("touchmove", cancelIfScrolled);
+    window.removeEventListener("scroll", cancelIfScrolled);
+    if (cancelled || window.scrollY > 48) return;
+
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    details.scrollIntoView({
+      behavior: reduceMotion ? "auto" : "smooth",
+      block: "start"
+    });
+  }, 6000);
 }
 
 /* ============================================
