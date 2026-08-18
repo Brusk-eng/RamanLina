@@ -775,7 +775,7 @@ function scheduleHeroAutoScroll() {
       behavior: reduceMotion ? "auto" : "smooth",
       block: "start"
     });
-  }, 6000);
+  }, 4000);
 }
 
 /* ============================================
